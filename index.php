@@ -10,34 +10,49 @@
         $books = [
             [
                 'name' => 'X',
-                'author' => 'Y',
+                'author' => 'K',
                 'releaseYear' => 2011,
                 'purchaseUrl' => 'http://example.com'
             ],
             [
                 'name' => 'X',
-                'author' => 'Y',
+                'author' => 'M',
                 'releaseYear' => 2011,
                 'purchaseUrl' => 'http://example.com'
             ],
             [
                 'name' => 'X',
-                'author' => 'Y',
+                'author' => 'M',
                 'releaseYear' => 2011,
                 'purchaseUrl' => 'http://example.com'
             ],
             [
                 'name' => 'X',
-                'author' => 'Y',
+                'author' => 'B',
                 'releaseYear' => 2011,
                 'purchaseUrl' => 'http://example.com'
             ]
             ];
 
+
+            function filterByAuthor($books){
+                $filteredBooks = [];
+
+                foreach($books as $book){
+                    if($book['author'] === 'M'){
+                        $filteredBooks[] = $book;
+                    }
+                }
+
+                return $filteredBooks;
+            }
+
+            
+
     ?>
 
     <ul>
-        <?php foreach($books as $book): ?>
+        <?php foreach(filterByAuthor($books) as $book): ?>
         <li><?php echo $book['name']; ?></li>
         <?php endforeach; ?>
     </ul>
