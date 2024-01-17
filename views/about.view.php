@@ -8,4 +8,4 @@
       <h1>Now, you are on about page.</h1>
     </div>
   </main>
-<?php require("partials/footer.php") ?>
+<?php require("partials/footer.php") ?> 

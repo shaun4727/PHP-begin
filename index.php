@@ -1,5 +1,6 @@
 <?php
 
+require "functions.php";
         $heading = "Dashboard";
         $books = [
             [
@@ -44,5 +45,5 @@
             $filteredBooks = filter($books,function($book){
                 return $book['author'] === 'B';
             });
-
+         
 require "views/index.view.php";

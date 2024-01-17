@@ -1,4 +1,5 @@
 <?php
+require "functions.php";
         $heading = "About Us";
         $books = [
             [
@@ -44,4 +45,5 @@
                 return $book['author'] === 'B';
             });
 
+            
 require "views/about.view.php";

@@ -1,4 +1,5 @@
 <?php
+require "functions.php";
 $heading = "Contact Us";
         $books = [
             [
@@ -43,5 +44,7 @@ $heading = "Contact Us";
             $filteredBooks = filter($books,function($book){
                 return $book['author'] === 'B';
             });
+
+           
 
 require "views/contact.view.php";
