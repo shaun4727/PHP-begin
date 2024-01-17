@@ -1,4 +1,6 @@
 <?php
+
+        $heading = "Dashboard";
         $books = [
             [
                 'name' => 'X',
@@ -43,4 +45,4 @@
                 return $book['author'] === 'B';
             });
 
-require "index.view.php";
+require "views/index.view.php";

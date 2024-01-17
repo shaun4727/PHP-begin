@@ -1,4 +1,5 @@
 <?php
+$heading = "Contact Us";
         $books = [
             [
                 'name' => 'X',
@@ -43,4 +44,4 @@
                 return $book['author'] === 'B';
             });
 
-require "contact.view.php";
+require "views/contact.view.php";

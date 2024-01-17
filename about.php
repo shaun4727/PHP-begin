@@ -1,4 +1,5 @@
 <?php
+        $heading = "About Us";
         $books = [
             [
                 'name' => 'X',
@@ -43,4 +44,4 @@
                 return $book['author'] === 'B';
             });
 
-require "about.view.php";
+require "views/about.view.php";
