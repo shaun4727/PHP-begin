@@ -5,16 +5,10 @@ require 'functions.php';
 // require 'router.php';
 
 
-$dsn = "mysql:host=localhost;port=3306;user=root;dbname=ecommerce;charset=utf8";
+require 'Database.php';
 
-$pdo = new PDO($dsn,'root');
-// $pdo = new PDO($dsn,'root');
-
-$statement = $pdo->prepare("select * from brands");
-
-$statement->execute();
-
-$brands = $statement->fetchAll(PDO::FETCH_ASSOC);
+$db = new Database;
+$brands = $db->query("select * from brands")->fetchAll(PDO::FETCH_ASSOC);
 
 var_dump($brands);
 
