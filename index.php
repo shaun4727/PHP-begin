@@ -7,7 +7,9 @@ require 'functions.php';
 
 require 'Database.php';
 
-$db = new Database;
+$config = require('config.php');
+
+$db = new Database($config['database']);
 $brands = $db->query("select * from brands")->fetchAll(PDO::FETCH_ASSOC);
 
 var_dump($brands);
