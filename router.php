@@ -6,7 +6,9 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $routes = [
     '/phpBegin/' => 'controllers/index.php',
     '/phpBegin/about' => 'controllers/about.php',
-    '/phpBegin/contact' => 'controllers/contact.php'
+    '/phpBegin/contact' => 'controllers/contact.php',
+    '/phpBegin/notes' => 'controllers/notes.php',
+    '/phpBegin/note' => 'controllers/note.php'
 ];
 
 function abort($code=404){
