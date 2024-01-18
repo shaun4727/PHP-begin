@@ -4,7 +4,6 @@ $heading = "Notes";
 
 $config = require('config.php');
 
-// $id = $_GET['id'];
 
 $query = "select * from notes";
 // $query = "select * from posts where id = :id";
