@@ -9,7 +9,7 @@ $query = "select * from notes";
 // $query = "select * from posts where id = :id";
 
 $db = new Database($config['database']);
-$notes = $db->query($query)->fetchAll(PDO::FETCH_ASSOC);
+$notes = $db->query($query)->findAll(PDO::FETCH_ASSOC);
 
 
            
