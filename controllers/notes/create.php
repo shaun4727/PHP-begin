@@ -1,8 +1,11 @@
 <?php
 
-require 'Validator.php';
+const BASE_PATHs = __DIR__.'/../../';
+require BASE_PATHs.'Validator.php';
 $heading = "Add Note";
-$config = require('config.php');
+
+
+$config = require(BASE_PATHs."/config.php");
 
 $query = "INSERT INTO notes (body,user_id) VALUES(:body,:user_id)";
 
@@ -19,4 +22,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 }
 
 
-require "views/notes/addNote.view.php";
+view("notes/addNote.view.php",['heading'=>'Add Note','error'=> $error]);

@@ -1,8 +1,8 @@
 <?php
 
-$heading = "Notes";
+const BASE_PATHs = __DIR__.'/../../';
 
-$config = require('config.php');
+$config = require(BASE_PATHs."/config.php");
 
 
 $query = "select * from notes where id=:id";
@@ -13,4 +13,4 @@ $note = $db->query($query,['id'=>$_GET['id']])->findOrFail(PDO::FETCH_ASSOC);
 
            
 
-require "views/notes/note.view.php";
+view("notes/note.view.php",['heading'=>'Note','note'=> $note]);

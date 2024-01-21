@@ -1,8 +1,9 @@
 <?php
 
-$heading = "Notes";
+const BASE_PATHs = __DIR__.'/../../';
 
-$config = require('config.php');
+$config = require(BASE_PATHs."/config.php");
+
 
 
 $query = "select * from notes";
@@ -14,4 +15,4 @@ $notes = $db->query($query)->findAll(PDO::FETCH_ASSOC);
 
            
 
-require "views/notes/notes.view.php";
+view("notes/notes.view.php",['heading'=>'Notes','notes'=> $notes]);

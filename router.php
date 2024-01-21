@@ -4,12 +4,12 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 
 
 $routes = [
-    '/phpBegin/' => 'controllers/index.php',
-    '/phpBegin/about' => 'controllers/about.php',
-    '/phpBegin/contact' => 'controllers/contact.php',
-    '/phpBegin/notes' => 'controllers/notes/index.php',
-    '/phpBegin/note' => 'controllers/notes/show.php',
-    '/phpBegin/addNote' => 'controllers/notes/create.php'
+    '/' => 'controllers/index.php',
+    '/about' => 'controllers/about.php',
+    '/contact' => 'controllers/contact.php',
+    '/notes' => 'controllers/notes/index.php',
+    '/note' => 'controllers/notes/show.php',
+    '/addNote' => 'controllers/notes/create.php'
 ];
 
 function abort($code=404){
