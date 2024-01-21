@@ -1,5 +1,6 @@
 <?php
 
+require 'Validator.php';
 $heading = "Add Note";
 $config = require('config.php');
 
@@ -9,11 +10,10 @@ $db = new Database($config['database']);
 
 $error = [];
 if($_SERVER["REQUEST_METHOD"] == "POST"){
-    
-    if(strlen($_POST['body']) === 0){
+    if(!Validator::string($_POST['body'],1,1000)){
         $error['body'] = 'Body is required';
     }
-    if(!empty($error)){
+    if(empty($error)){
         $db->query($query,['body'=>$_POST['body'],'user_id'=>1]);
     }
 }
