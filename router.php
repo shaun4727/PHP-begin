@@ -7,9 +7,9 @@ $routes = [
     '/phpBegin/' => 'controllers/index.php',
     '/phpBegin/about' => 'controllers/about.php',
     '/phpBegin/contact' => 'controllers/contact.php',
-    '/phpBegin/notes' => 'controllers/notes.php',
-    '/phpBegin/note' => 'controllers/note.php',
-    '/phpBegin/addNote' => 'controllers/addNote.php'
+    '/phpBegin/notes' => 'controllers/notes/index.php',
+    '/phpBegin/note' => 'controllers/notes/show.php',
+    '/phpBegin/addNote' => 'controllers/notes/create.php'
 ];
 
 function abort($code=404){

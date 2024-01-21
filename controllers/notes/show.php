@@ -5,13 +5,12 @@ $heading = "Notes";
 $config = require('config.php');
 
 
-$query = "select * from notes";
+$query = "select * from notes where id=:id";
 // $query = "select * from posts where id = :id";
 
 $db = new Database($config['database']);
-$notes = $db->query($query)->findAll(PDO::FETCH_ASSOC);
-
+$note = $db->query($query,['id'=>$_GET['id']])->findOrFail(PDO::FETCH_ASSOC);
 
            
 
-require "views/notes.view.php";
+require "views/notes/note.view.php";
