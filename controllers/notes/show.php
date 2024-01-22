@@ -1,4 +1,5 @@
 <?php
+use Core\Database;
 
 const BASE_PATHs = __DIR__.'/../../';
 

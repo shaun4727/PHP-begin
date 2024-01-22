@@ -1,5 +1,7 @@
 <?php
 
+use Core\Database;
+
 const BASE_PATHs = __DIR__.'/../../';
 
 $config = require(BASE_PATHs."/config.php");

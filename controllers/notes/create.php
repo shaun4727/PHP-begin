@@ -1,7 +1,10 @@
 <?php
+use Core\Database;
+use Core\Validator;
+
 
 const BASE_PATHs = __DIR__.'/../../';
-require BASE_PATHs.'Validator.php';
+require BASE_PATHs.'core/Validator.php';
 $heading = "Add Note";
 
 
