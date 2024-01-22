@@ -1,6 +1,7 @@
 <?php
 use Core\Database;
 use Core\Validator;
+use Core\App;
 
 
 const BASE_PATHs = __DIR__.'/../../';
@@ -8,11 +9,11 @@ require BASE_PATHs.'core/Validator.php';
 $heading = "Add Note";
 
 
-$config = require(BASE_PATHs."/config.php");
+
 
 $query = "INSERT INTO notes (body,user_id) VALUES(:body,:user_id)";
 
-$db = new Database($config['database']);
+$db = App::resolve(Database::class);
 
 $error = [];
 if($_SERVER["REQUEST_METHOD"] == "POST"){

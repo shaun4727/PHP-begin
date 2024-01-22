@@ -1,17 +1,18 @@
 <?php
 
 use Core\Database;
+use Core\App;
 
 const BASE_PATHs = __DIR__.'/../../';
 
-$config = require(BASE_PATHs."/config.php");
+
 
 
 
 $query = "select * from notes where user_id=:id";
 // $query = "select * from posts where id = :id";
 
-$db = new Database($config['database']);
+$db = App::resolve(Database::class);
 $notes = $db->query($query,['id'=>1])->findAll(PDO::FETCH_ASSOC);
 
 
