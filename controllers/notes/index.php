@@ -8,11 +8,11 @@ $config = require(BASE_PATHs."/config.php");
 
 
 
-$query = "select * from notes";
+$query = "select * from notes where user_id=:id";
 // $query = "select * from posts where id = :id";
 
 $db = new Database($config['database']);
-$notes = $db->query($query)->findAll(PDO::FETCH_ASSOC);
+$notes = $db->query($query,['id'=>1])->findAll(PDO::FETCH_ASSOC);
 
 
            

@@ -10,7 +10,22 @@ $query = "select * from notes where id=:id";
 // $query = "select * from posts where id = :id";
 
 $db = new Database($config['database']);
-$note = $db->query($query,['id'=>$_GET['id']])->findOrFail(PDO::FETCH_ASSOC);
+
+$currentUserID = "1";
+$note = [];
+if($_SERVER['REQUEST_METHOD'] === 'POST'){
+    $note = $db->query($query,['id'=>$_POST['id']])->findOrFail(PDO::FETCH_ASSOC);
+    authorize($note['user_id'] === $currentUserID);
+
+    $db->query('delete from notes where id=:id',['id'=>$_POST['id']]);
+    header('location: /notes');
+    exit();
+}else{
+    
+    $note = $db->query($query,['id'=>$_GET['id']])->findOrFail(PDO::FETCH_ASSOC);
+    authorize($note['user_id'] === $currentUserID);
+}
+
 
            
 
