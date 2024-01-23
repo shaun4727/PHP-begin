@@ -7,7 +7,7 @@ $query = "select * from notes where id=:id";
 
 $db = App::resolve(Database::class);
 
-$currentUserID = "1";
+$currentUserID = "5";
 $note = $db->query($query,['id'=>$_POST['id']])->findOrFail(PDO::FETCH_ASSOC);
 
 authorize($note['user_id'] === $currentUserID);

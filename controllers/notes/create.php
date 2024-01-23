@@ -21,7 +21,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         $error['body'] = 'Body is required';
     }
     if(empty($error)){
-        $db->query($query,['body'=>$_POST['body'],'user_id'=>1]);
+        $db->query($query,['body'=>$_POST['body'],'user_id'=>5]);
     }
 }
 

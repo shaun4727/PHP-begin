@@ -13,7 +13,7 @@ $query = "select * from notes where user_id=:id";
 // $query = "select * from posts where id = :id";
 
 $db = App::resolve(Database::class);
-$notes = $db->query($query,['id'=>1])->findAll(PDO::FETCH_ASSOC);
+$notes = $db->query($query,['id'=>5])->findAll(PDO::FETCH_ASSOC);
 
 
            
