@@ -1,5 +1,6 @@
 <?php
 use Core\Session;
+use Core\ValidationException;
 
 session_start();
 
@@ -8,11 +9,8 @@ const BASE_PATH = __DIR__.'/../';
 require BASE_PATH.'core/functions.php';
 
 
+require BASE_PATH.'vendor/autoload.php';
 
-spl_autoload_register(function($class){
-    $class = str_replace('\\',DIRECTORY_SEPARATOR,$class);
-    base_path("{$class}.php");
-});
 require base_path_sec('bootstrap.php');
 // base_path('core/Router.php');
 $router = new \Core\Router();
@@ -23,7 +21,15 @@ $uri = parse_url($_SERVER['REQUEST_URI'])['path'];
 $routes = require base_path_sec('routes.php');
 $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 
-$router->route($uri,$method);
+
+try{
+    $router->route($uri,$method);
+}catch(ValidationException $exception){
+    Session::flash('errors', $exception->errors());
+    Session::flash('old', ['email' => $attributes['email']]);
+
+    return redirect($_SERVER['HTTP_REFERER']);
+}
 
 Session::unflash();
 

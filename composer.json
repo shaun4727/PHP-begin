@@ -1,0 +1,16 @@
+{
+    "name": "shaun/php-begin",
+    "authors": [
+        {
+            "name": "shaun4727",
+            "email": "107396795+shaun4727@users.noreply.github.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "Core/",
+            "Http\\": "Http/"
+        }
+    }
+}
