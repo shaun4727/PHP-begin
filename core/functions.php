@@ -23,3 +23,8 @@ function base_path_sec($path,$attributes=[]){
 function view($path,$attributes=[]){
     return base_path('views/'.$path,$attributes);
 }
+
+function redirect($path){
+    header("location: {$path}");
+    exit();
+}
